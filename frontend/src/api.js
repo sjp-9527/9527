@@ -17,4 +17,17 @@ API.getUserComments = (username) => API.get(`/community/user-comments/${username
 API.getUserLikes = (username) => API.get(`/community/user-likes/${username}`);
 API.reportContent = (data) => API.post('/community/report', data);
 
+// 图片搜索API
+API.searchUnsplashImages = (query, page = 1, per_page = 20) => 
+  API.get('/images/unsplash', { params: { query, page, per_page } });
+
+API.searchPixabayImages = (query, page = 1, per_page = 20) => 
+  API.get('/images/pixabay', { params: { query, page, per_page } });
+
+API.getRandomSceneryImage = (category = 'landscape') => 
+  API.get('/images/random', { params: { category } });
+
+API.getSceneryImages = (destinations) => 
+  API.post('/images/scenery', { destinations });
+
 export default API;
