@@ -8,7 +8,7 @@ import communityRoutes from './routes/community.js';
 import rateLimit from 'express-rate-limit';
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 // 允许跨域
 app.use(cors());
@@ -33,4 +33,4 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
-}); 
+});

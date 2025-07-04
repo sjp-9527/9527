@@ -3,12 +3,12 @@ import { Destination } from '../models/index.js';
 // 示例风景数据，可替换为数据库查询
 const sceneryData = {
   1: [
-    { id: 1, name: '长城', description: '中国著名古迹', image: '/uploads/greatwall.jpg' },
-    { id: 2, name: '颐和园', description: '皇家园林', image: '/uploads/summerpalace.jpg' }
+    { id: 1, name: '扬州瘦西湖', description: '清晨薄雾中的二十四桥，琼花沾露', image: '/uploads/shouxihu.jpg' },
+    { id: 2, name: '苏州园林', description: '花窗取景框中的海棠与山茶', image: '/uploads/suzhougarden.jpg' }
   ],
   2: [
-    { id: 3, name: '外滩', description: '上海地标', image: '/uploads/bund.jpg' },
-    { id: 4, name: '东方明珠', description: '著名电视塔', image: '/uploads/orientaltower.jpg' }
+    { id: 3, name: '阿尔山天池', description: '火山地貌与杜鹃湖美景', image: '/uploads/arxan.jpg' },
+    { id: 4, name: '郑州溱洧水城', description: '古韵灯光下的瓮城夜景', image: '/uploads/zhengzhou.jpg' }
   ]
 };
 
@@ -32,4 +32,4 @@ export async function getSceneryByDestination(req, res) {
   const { id } = req.params;
   const scenery = sceneryData[id] || [];
   res.json(scenery);
-} 
+}

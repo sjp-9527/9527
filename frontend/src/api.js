@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL: 'http://localhost:3000/api',
 });
 
 // 社区API
@@ -17,4 +17,4 @@ API.getUserComments = (username) => API.get(`/community/user-comments/${username
 API.getUserLikes = (username) => API.get(`/community/user-likes/${username}`);
 API.reportContent = (data) => API.post('/community/report', data);
 
-export default API; 
+export default API;

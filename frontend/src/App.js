@@ -34,7 +34,7 @@ function App() {
       if (destinationId) {
         const res = await API.get(`/destinations/${destinationId}/scenery`);
         if (res.data && res.data.length > 0) {
-          setBgImage(`http://localhost:3001${res.data[0].image}`);
+          setBgImage(`http://localhost:3000${res.data[0].image}`);
           return;
         }
       }
@@ -43,7 +43,7 @@ function App() {
       for (let d of dests.data) {
         const res2 = await API.get(`/destinations/${d.id}/scenery`);
         if (res2.data && res2.data.length > 0) {
-          setBgImage(`http://localhost:3001${res2.data[0].image}`);
+          setBgImage(`http://localhost:3000${res2.data[0].image}`);
           return;
         }
       }
@@ -142,4 +142,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
