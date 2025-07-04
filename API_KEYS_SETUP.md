@@ -31,6 +31,18 @@
 
 **注意**: 抖音API需要企业认证，审核较严格。如果无法获取官方API密钥，可以使用模拟数据。
 
+### 高德地图API密钥
+1. 访问 [高德开放平台](https://lbs.amap.com/)
+2. 注册/登录账号
+3. 创建应用：
+   - 应用名称: `Travel Community App`
+   - 应用描述: `旅游社区应用，用于地点搜索`
+   - 应用类型: `Web服务`
+4. 获取API密钥：
+   - 复制 `Key` 字段
+
+**注意**: 高德地图API提供免费额度，每日30万次请求。
+
 ## 2. 配置环境变量
 
 ### 方法1：创建.env文件（推荐）
@@ -57,6 +69,10 @@ PIXABAY_API_KEY=your_pixabay_api_key_here
 DOUYIN_API_KEY=your_douyin_api_key_here
 DOUYIN_CLIENT_KEY=your_douyin_client_key_here
 DOUYIN_CLIENT_SECRET=your_douyin_client_secret_here
+AMAP_API_KEY=your_amap_api_key_here
+
+# 高德地图API密钥
+AMAP_API_KEY=your_amap_api_key_here
 
 # 文件上传配置
 UPLOAD_PATH=./uploads
@@ -117,6 +133,13 @@ curl "http://localhost:3000/api/douyin/hot?category=travel"
 curl "http://localhost:3000/api/douyin/search?query=长城"
 ```
 
+### 测试高德地图API
+```bash
+curl "http://localhost:3000/api/map/search?keyword=长城"
+curl "http://localhost:3000/api/map/hot-cities"
+curl "http://localhost:3000/api/map/geocode?address=北京天安门"
+```
+
 ## 5. 安全注意事项
 
 - ⚠️ **不要将API密钥提交到Git仓库**
@@ -138,6 +161,11 @@ curl "http://localhost:3000/api/douyin/search?query=长城"
 - 需要企业认证
 - 每日请求限制根据认证等级
 - 需要遵守抖音内容规范
+
+### 高德地图API限制
+- 每日30万次免费请求
+- 需要遵守高德地图使用条款
+- 支持多种地图服务功能
 
 ## 7. 故障排除
 

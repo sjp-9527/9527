@@ -7,6 +7,7 @@ import destinationRoutes from './routes/destination.js';
 import communityRoutes from './routes/community.js';
 import imageRoutes from './routes/images.js';
 import douyinRoutes from './routes/douyin.js';
+import mapRoutes from './routes/map.js';
 import rateLimit from 'express-rate-limit';
 
 const app = express();
@@ -23,6 +24,7 @@ app.use('/api/destinations', destinationRoutes);
 app.use('/api/community', communityRoutes);
 app.use('/api/images', imageRoutes);
 app.use('/api/douyin', douyinRoutes);
+app.use('/api/map', mapRoutes);
 
 // 限流：每个IP每分钟最多发帖/评论/举报5次
 const postLimiter = rateLimit({ windowMs: 60 * 1000, max: 5, message: '操作过于频繁，请稍后再试' });
