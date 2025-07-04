@@ -1,14 +1,19 @@
 {
-  "name": "backend",
+  "name": "travel-community-backend",
   "version": "1.0.0",
+  "description": "旅游社区应用后端服务",
   "main": "app.js",
+  "type": "module",
   "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "migrate": "node migrate_add_isAdmin.js",
+    "setup-admin": "node setAdmin.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["travel", "community", "express", "nodejs", "sqlite"],
+  "author": "SJP",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.0",
@@ -21,5 +26,11 @@
     "sharp": "^0.34.2",
     "sqlite3": "^5.1.7"
   },
-  "description": ""
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
 }
